@@ -147,22 +147,14 @@ After following the steps above, various outputs will be stored in the `output/`
 - **Feature Importance**: A ranked list of features by importance, providing insights into which molecular descriptors most influence predictions.
 - **Correlation Heatmap**: A graphical representation of feature correlations, revealing potential redundancies and aiding in refined feature selection.
 
-## System Requirements and Configuration
-
-### Recommended System Specifications
-
-The following configuration is recommended for smooth execution, particularly during ChemBERTa embedding extraction and model training:
-
-- **Operating System**: Windows 10 (version 19045) or a compatible Linux distribution.
-- **Processor**: Intel(R) Core(TM) i7-11800H CPU @ 2.30GHz, with 14 physical cores and 20 logical processors, and a maximum frequency of 3.5GHz.
-- **Graphics Card**: NVIDIA GeForce RTX 4060 Ti with 16GB of dedicated VRAM, especially beneficial for GPU-accelerated tasks.
-- **Memory**: Minimum of 16GB RAM (additional memory is advantageous for handling larger datasets and intensive model training tasks).
 
 ### Additional Notes
 
 The project leverages GPU acceleration for ChemBERTa feature extraction. Ensure that PyTorch is configured to utilize the GPU (CUDA) if an NVIDIA GPU is available, significantly improving computation speed for embedding generation and model training.
 
+
+The provided code primarily addresses the melting point prediction; similar methodologies can be applied to predict density with equivalent modifications.
+
 --- 
 
 By combining ChemBERTa embeddings with physicochemical descriptors, this project establishes a robust framework for DES property prediction, emphasizing both feature interpretability and predictive accuracy. This approach represents a significant step forward in chemical informatics, contributing to sustainable solvent design.
-```

@@ -1,4 +1,3 @@
-```markdown
 # Predicting Properties of Deep Eutectic Solvents (DESs) using ChemBERTa and Ensemble Models
 
 ## Abstract
@@ -65,14 +64,6 @@ pip install -r requirements.txt
 - **seaborn** and **matplotlib**: For data visualization.
 - **numpy**: For efficient numerical computations.
 
-## Data
-
-The project uses two main datasets:
-
-- **DESs_density_data.csv**: Contains density measurements for various DES compounds.
-- **DESs_melting_point_data.csv**: Contains melting point data for the same DES compounds.
-
-These datasets are located in the `data/` directory and are used as input for descriptor extraction and feature generation.
 
 ## Code Modules
 

@@ -34,17 +34,14 @@ Install the required Python packages listed in `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
+```
 Key Libraries
 pandas: For data manipulation
 torch and transformers: For using the ChemBERTa model
 scikit-learn: For machine learning models, preprocessing, and evaluation
 seaborn and matplotlib: For data visualization
 numpy: For numerical computations
-Data
-Place your input datasets in the data/ directory. This project uses:
 
-DESs_density_data.csv: Contains density data for DES compounds.
-DESs_melting_point_data.csv: Contains melting point data for DES compounds.
 Code Modules
 Data Preparation and Descriptor Extraction
 descriptor_extraction.py: Extracts molecular descriptors from SMILES strings using RDKit and ChemBERTa embeddings. These descriptors are saved and used as input features for model training.

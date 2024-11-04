@@ -3,11 +3,11 @@
 
 ## Abstract
 
-Deep eutectic solvents (DESs) are gaining attention as sustainable solvent alternatives due to their low toxicity, biodegradability, and broad applicability in various fields. However, predicting critical properties like melting point and density is complex due to DESs' structural heterogeneity. Conventional prediction models often fail to accurately capture subtle structural intricacies, particularly those encoded within SMILES (Simplified Molecular Input Line Entry System) representations. 
+Deep eutectic solvents (DESs) have emerged as promising sustainable alternatives to conventional solvents due to their low toxicity, biodegradability, and broad applicability. However, predicting crucial DES properties, such as melting point and density, is challenging due to their complex molecular structures. Traditional predictive models often struggle to capture subtle structural features from SMILES (Simplified Molecular Input Line Entry System) representations, resulting in limited accuracy.
 
-Our study employs ChemBERTa, a Transformer-based deep learning model, to extract detailed embeddings from SMILES strings, effectively capturing molecular interactions and nuanced structural features. Recognizing limitations in ChemBERTa embeddings, we enhance these with specific physicochemical descriptors from RDKit, creating a comprehensive feature set that balances predictive power with interpretability.
+In this study, we utilize ChemBERTa, a pre-trained Transformer model, to extract high-dimensional embeddings from SMILES strings, which effectively capture complex molecular interactions and nuanced structural characteristics. We identified certain limitations in ChemBERTa embeddings through feature importance analysis and supplemented them with additional physicochemical descriptors from RDKit. This combined feature set enhances both interpretability and predictive accuracy.
 
-Ensemble models, including ExtraTreesRegressor (ETR) and XGBRegressor (XGBR), are trained on this enriched feature set, yielding significant improvements in prediction accuracy for DES melting point and density. Through extensive grid search and ten-fold cross-validation, we ensure model robustness and generalizability. Our results highlight the potential of combining pre-trained deep learning models with ensemble techniques to drive scalable and sustainable DES design.
+Optimized ensemble models, including ExtraTreesRegressor (ETR) and XGBRegressor (XGBR), are applied to this enriched feature set, achieving significant improvements in prediction accuracy for DES melting point and density. Rigorous grid search and ten-fold cross-validation are employed to ensure model robustness and generalizability. Our findings underscore the transformative role of pre-trained deep learning models in chemical informatics, supporting scalable, sustainable DES design.
 
 ---
 
@@ -25,33 +25,33 @@ Ensemble models, including ExtraTreesRegressor (ETR) and XGBRegressor (XGBR), ar
 
 ## Project Structure
 
-The project is structured as follows:
+The directory structure of this project is organized as follows:
 
 ```
 Model architecture/
-├── README.md                 # Project description and usage instructions
-├── data/                     # Data folder
+├── README.md                           # Project description and usage instructions
+├── data/                               # Data folder
 │   ├── __init__.py
-│   ├── descriptor_extraction.py  # Extracts molecular descriptors from SMILES
-│   ├── DESs_density_data.csv     # Density data for DESs
-│   └── DESs_melting_point_data.csv  # Melting point data for DESs
-├── output/                   # Output folder for generated files
-├── src/                      # Source code
+│   ├── descriptor_extraction.py        # Extracts molecular descriptors from SMILES
+│   ├── DESs_density_data.csv           # Density data for DESs
+│   └── DESs_melting_point_data.csv     # Melting point data for DESs
+├── output/                             # Output folder for generated files
+├── src/                                # Source code
 │   ├── __init__.py
-│   ├── models/               # Model scripts
+│   ├── models/                         # Model scripts
 │   │   ├── __init__.py
 │   │   ├── chemberta_model_comparison.py
 │   │   └── chemberta_model_grid_search.py
-│   └── utils/                # Utility scripts
+│   └── utils/                          # Utility scripts
 │       ├── __init__.py
 │       ├── correlation_heatmap.py
 │       └── feature_importance_extraction.py
-└── requirements.txt          # Project dependencies
+└── requirements.txt                    # Project dependencies
 ```
 
 ## Dependencies
 
-To ensure compatibility, install all necessary Python packages listed in `requirements.txt`:
+To set up the environment, install the required Python packages listed in `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
@@ -60,19 +60,19 @@ pip install -r requirements.txt
 ### Key Libraries
 
 - **pandas**: For data manipulation and preprocessing.
-- **torch** and **transformers**: For loading and utilizing ChemBERTa for molecular embedding extraction.
+- **torch** and **transformers**: For leveraging ChemBERTa for molecular embedding extraction.
 - **scikit-learn**: For building, training, and evaluating machine learning models.
 - **seaborn** and **matplotlib**: For data visualization.
-- **numpy**: For handling numerical computations efficiently.
+- **numpy**: For efficient numerical computations.
 
 ## Data
 
-The project utilizes two main datasets:
+The project uses two main datasets:
 
 - **DESs_density_data.csv**: Contains density measurements for various DES compounds.
 - **DESs_melting_point_data.csv**: Contains melting point data for the same DES compounds.
 
-Both datasets are stored in the `data/` directory and are used as input for descriptor extraction and feature generation.
+These datasets are located in the `data/` directory and are used as input for descriptor extraction and feature generation.
 
 ## Code Modules
 
@@ -80,19 +80,19 @@ Both datasets are stored in the `data/` directory and are used as input for desc
 
 - **descriptor_extraction.py**: This script generates two types of features:
   - **ChemBERTa embeddings** from SMILES strings, capturing intricate molecular patterns and relationships.
-  - **RDKit descriptors** to augment ChemBERTa features with specific physicochemical properties for better model interpretability.
+  - **RDKit descriptors** to augment ChemBERTa embeddings with additional physicochemical information for better model interpretability.
   
   The extracted features are saved for model training.
 
 ### Models
 
-- **chemberta_model_comparison.py**: Trains multiple models (e.g., ExtraTreesRegressor, RandomForestRegressor) to predict DES properties using the prepared dataset and compares performance metrics.
-- **chemberta_model_grid_search.py**: Conducts grid search and cross-validation to optimize hyperparameters, boosting model accuracy and robustness.
+- **chemberta_model_comparison.py**: Trains multiple models (e.g., ExtraTreesRegressor, RandomForestRegressor) on the prepared dataset to predict DES properties and compares their performance.
+- **chemberta_model_grid_search.py**: Conducts grid search and cross-validation to optimize hyperparameters, further improving model accuracy and robustness.
 
 ### Utilities
 
 - **correlation_heatmap.py**: Generates a heatmap to visualize feature correlations, aiding in identifying redundant or highly correlated descriptors.
-- **feature_importance_extraction.py**: Extracts and ranks features based on their importance, providing insights into which descriptors most significantly influence predictions.
+- **feature_importance_extraction.py**: Extracts and ranks features based on their importance, providing insights into which descriptors most significantly influence DES property predictions.
 
 ## Usage
 
@@ -108,7 +108,7 @@ pip install -r requirements.txt
 
 #### Step 1: Data Preparation
 
-Run `descriptor_extraction.py` to extract molecular descriptors and ChemBERTa embeddings. Ensure the input data files (`DESs_density_data.csv`, `DESs_melting_point_data.csv`) are placed in the `data/` directory.
+Run `descriptor_extraction.py` to extract molecular descriptors and ChemBERTa embeddings. Make sure the input data files (`DESs_density_data.csv`, `DESs_melting_point_data.csv`) are in the `data/` directory.
 
 ```bash
 python data/descriptor_extraction.py
@@ -116,7 +116,7 @@ python data/descriptor_extraction.py
 
 #### Step 2: Model Training and Comparison
 
-Execute `chemberta_model_comparison.py` to train and evaluate different models on the extracted features, comparing performance across models to identify the best fit.
+Execute `chemberta_model_comparison.py` to train and evaluate different models on the extracted features, comparing performance across models to identify the most effective predictor.
 
 ```bash
 python src/models/chemberta_model_comparison.py
@@ -148,23 +148,23 @@ python src/utils/feature_importance_extraction.py
 
 ## Results
 
-Upon completing the steps above, you will obtain various outputs stored in the `output/` directory. These include:
+After following the steps above, various outputs will be stored in the `output/` directory, including:
 
 ### Example Outputs
 
 - **Model Evaluation**: Key metrics such as Mean Squared Error (MSE), R-squared score (R²), and Average Absolute Relative Deviation (AARD) for each model.
-- **Feature Importance**: A ranked list of features based on their importance, providing insights into which molecular descriptors drive predictions.
-- **Correlation Heatmap**: A graphical representation of feature correlations, revealing potential redundancies and enabling a more refined feature selection process.
+- **Feature Importance**: A ranked list of features by importance, providing insights into which molecular descriptors most influence predictions.
+- **Correlation Heatmap**: A graphical representation of feature correlations, revealing potential redundancies and aiding in refined feature selection.
 
 ## System Requirements and Configuration
 
 ### Recommended System Specifications
 
-The following system configuration is recommended to ensure smooth execution, especially during ChemBERTa embedding generation and model training:
+The following configuration is recommended for smooth execution, particularly during ChemBERTa embedding extraction and model training:
 
-- **Operating System**: Windows 10 (version 19045) or compatible Linux distribution.
-- **Processor**: Intel(R) Core(TM) i7-11800H CPU @ 2.30GHz, featuring 14 physical cores and 20 logical processors, with a maximum frequency of 3.5GHz.
-- **Graphics Card**: NVIDIA GeForce RTX 4060 Ti with 16GB of dedicated VRAM, particularly beneficial for GPU-accelerated tasks.
+- **Operating System**: Windows 10 (version 19045) or a compatible Linux distribution.
+- **Processor**: Intel(R) Core(TM) i7-11800H CPU @ 2.30GHz, with 14 physical cores and 20 logical processors, and a maximum frequency of 3.5GHz.
+- **Graphics Card**: NVIDIA GeForce RTX 4060 Ti with 16GB of dedicated VRAM, especially beneficial for GPU-accelerated tasks.
 - **Memory**: Minimum of 16GB RAM (additional memory is advantageous for handling larger datasets and intensive model training tasks).
 
 ### Additional Notes
@@ -173,5 +173,5 @@ The project leverages GPU acceleration for ChemBERTa feature extraction. Ensure 
 
 --- 
 
-By meticulously integrating ChemBERTa embeddings and physicochemical descriptors, this project demonstrates a scalable framework for the predictive modeling of DES properties. The approach emphasizes both feature interpretability and predictive accuracy, marking a promising advancement in chemical informatics for sustainable solvent design.
+By combining ChemBERTa embeddings with physicochemical descriptors, this project establishes a robust framework for DES property prediction, emphasizing both feature interpretability and predictive accuracy. This approach represents a significant step forward in chemical informatics, contributing to sustainable solvent design.
 ```

@@ -1,0 +1,11 @@
+pandas==2.2.3
+torch==2.3.0
+numpy==1.26.4
+seaborn==0.13.2
+matplotlib==3.9.2
+transformers==4.42.3
+scikit-learn==1.5.2
+xgboost==2.1.0
+lightgbm==4.4.0
+rdkit==2023.9.1
+lazypredict==0.2.12

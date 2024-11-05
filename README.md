@@ -29,12 +29,15 @@ The directory structure of this project is organized as follows:
 ```
 Model architecture/
 ├── README.md                           # Project description and usage instructions
+├── Fast running/
+│   ├── __init__.py
+│   ├── melting_point.py       
+│   ├── density.py         
 ├── data/                               # Data folder
 │   ├── __init__.py
 │   ├── descriptor_extraction.py        # Extracts molecular descriptors from SMILES
 │   ├── DESs_density_data.csv           # Density data for DESs
 │   └── DESs_melting_point_data.csv     # Melting point data for DESs
-├── output/                             # Output folder for generated files
 ├── src/                                # Source code
 │   ├── __init__.py
 │   ├── models/                         # Model scripts
@@ -154,6 +157,17 @@ The project leverages GPU acceleration for ChemBERTa feature extraction. Ensure 
 
 
 The provided code primarily addresses the melting point prediction; similar methodologies can be applied to predict density with equivalent modifications.
+
+
+The relevant data and models can be accessed through the following shared link. By utilizing the code files in the "Fast running" folder, users can directly obtain the desired results.
+
+
+Shared file through cloud storage: "Predicting-Melting-Point-and-Density-of-DESs-by-ChemBERTa-ML"
+
+
+Link: https://pan.baidu.com/s/1bZvsbRFLWsGijbSIOEy6zQ?pwd=3fwn
+
+Access code: 3fwn
 
 --- 
 

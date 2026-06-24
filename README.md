@@ -150,25 +150,6 @@ After following the steps above, various outputs will be stored in the `output/`
 - **Feature Importance**: A ranked list of features by importance, providing insights into which molecular descriptors most influence predictions.
 - **Correlation Heatmap**: A graphical representation of feature correlations, revealing potential redundancies and aiding in refined feature selection.
 
-
-### Additional Notes
-
-The project leverages GPU acceleration for ChemBERTa feature extraction. Ensure that PyTorch is configured to utilize the GPU (CUDA) if an NVIDIA GPU is available, significantly improving computation speed for embedding generation and model training.
-
-
-The provided code primarily addresses the melting point prediction; similar methodologies can be applied to predict density with equivalent modifications.
-
-
-The relevant data and models can be accessed through the following shared link. By utilizing the code files in the "Fast running" folder, users can directly obtain the desired results.
-
-
-Shared file through cloud storage: "Predicting-Melting-Point-and-Density-of-DESs-by-ChemBERTa-ML"
-
-
-Link: https://pan.baidu.com/s/1bZvsbRFLWsGijbSIOEy6zQ?pwd=3fwn
-
-Access code: 3fwn
-
 --- 
 
 By combining ChemBERTa embeddings with physicochemical descriptors, this project establishes a robust framework for DES property prediction, emphasizing both feature interpretability and predictive accuracy. This approach represents a significant step forward in chemical informatics, contributing to sustainable solvent design.
